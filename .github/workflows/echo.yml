@@ -8,6 +8,8 @@ on:
 
 jobs:    
   echo:
+    runs-on: ubuntu-latest
+    
     steps:
     - name: Echo Test
       run: echo "Hello World!"
