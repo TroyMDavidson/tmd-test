@@ -1,0 +1,13 @@
+name: Blah Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Echo Test
+      run: echo "Hello World!"
