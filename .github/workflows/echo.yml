@@ -1,0 +1,15 @@
+name: Blah Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:    
+  echo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Echo Test
+      run: echo "Hello World!"
