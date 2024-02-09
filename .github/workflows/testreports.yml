@@ -11,11 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-        files: |
-          test-results/**/*.xml
-          test-results/**/*.trx
-          test-results/**/*.json  
+      - name: Build
+        run: mvn clean package
+
+      - name: Build Success  
+        run: echo "BUILD SUCCESS"
+
+      - name: Test
+        run: mvn test
+      
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            test-results/**/*.xml
+            test-results/**/*.trx
+            test-results/**/*.json  
